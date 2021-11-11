@@ -1,0 +1,17 @@
+
+*.0_x5
+*.tfstate
+*.backup
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.64.1/darwin_amd64/README.md
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.64.1/darwin_amd64/LICENSE
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.64.1/darwin_amd64/CHANGELOG.md
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/hashicorp/time/0.7.2/darwin_amd64/terraform-provider-time_v0.7.2_x5
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/hashicorp/template/2.2.0/darwin_amd64/terraform-provider-template_v2.2.0_x4
+Yandex-Azure VPN/modules/vpn/.terraform.tfstate.lock.info
+Yandex-Azure VPN/modules/vpn/.terraform.lock.hcl
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.64.1/darwin_amd64/terraform-provider-yandex_v0.64.1
+*.tfvars
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/terraform-provider-yandex_v0.66.0
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/README.md
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/LICENSE
+Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/CHANGELOG.md
