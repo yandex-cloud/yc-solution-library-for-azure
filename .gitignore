@@ -15,3 +15,9 @@ Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-c
 Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/README.md
 Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/LICENSE
 Yandex-Azure VPN/modules/vpn/.terraform/providers/registry.terraform.io/yandex-cloud/yandex/0.66.0/darwin_amd64/CHANGELOG.md
+
+# Service account key files
+key.json
+
+# Resulting bash scripts
+Yandex-Azure-Arc-K8S/terraform/scripts/*.sh
