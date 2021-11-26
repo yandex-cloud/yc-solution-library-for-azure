@@ -103,7 +103,7 @@ In case of service account key file authentication, the `key.json` file should b
 
 ### Azure provider
 
-Azure provider authentication is based on the Service Principal we have created earlier, in Prerequisites section.
+Azure provider authentication is based on the Service Principal we have created earlier, in [Prerequisites](#prerequisites) section.
 
 ### Create private.auto.tfvars file
 
@@ -119,7 +119,7 @@ az_service_principal_app_id = "xxx"
 az_service_principal_secret = "xxx"
 ```
 
-Process of obtaining this information is described in the Prerequisites section.
+Process of obtaining this information is described in the [Prerequisites](#prerequisites) section.
 Keep in mind that `az_service_principal_secret` should be mapped with the `password` field of Service Principal creation output. Other fields' names are self-explanatory.
 
 In case of Oauth token authentication, the following line containing Oauth token, should be added to the `private.auto.tfvars` file:
@@ -175,6 +175,17 @@ Run the `az_yc_arc_connect_script.sh` script located in `scripts` folder:
 This script is pre-filled with the data from Terraform module and can be run as it is.
 As a result of running this script, Azure Arc connectivity will be set up, Cluster Connect feature will be enabled, and service account token will be displayed, which can be copied and pasted in Azure portal to display cluster-specific information.
 
+### Results
+
+Kubernetes cluster created in Yandex.Cloud is successfully connected to Azure Arc and it's configuration and resources are visible in Azure Arc portal.
+
+(IMAGES)
+
+## GitOps Integration
+
+(PLACEHOLDER)
+(DIAGRAM)
+
 ### az_yc_arc_gitops_script.sh
 
 Run the `az_yc_arc_gitops_script.sh` script located in `scripts` folder:
@@ -186,12 +197,8 @@ This script is pre-filled with the data from Terraform module and can be run as 
 As a result of running this script, GitOps configuration will be created, based on public Github repository.
 Contents of Github repository (specifically yaml files containing the `hello` application service and deployment) will be deployed in Yandex.Cloud Kubernetes cluster. Any changes in the original application repository will be monitored and transferred to the actual deployment in the Kubernetes cluster.
 
-## Result
+### Results
 
-Kubernetes cluster created in Yandex.Cloud is successfully connected to Azure Arc and it's configuration and resources are visible in Azure Arc portal.
-
-(IMAGES)
-
-GitOps configuration is also created and the resources described in public GitHub are successfully provisioned.
+GitOps configuration is created and the resources described in public GitHub are successfully provisioned.
 
 (IMAGES)
