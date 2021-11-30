@@ -276,7 +276,7 @@ GitOps configuration is created and the resources described in public GitHub are
 
 Resources specific to `hello-app` in a cluster:
 
-<img src="images/yc-azure-arc-gitops.jpg?raw=true" width="400px" alt="Azure Arc GitOps Resources" title="Azure Arc GitOps Resources"><br/>
+<img src="images/yc-azure-arc-gitops-resources.jpg?raw=true" width="400px" alt="Azure Arc GitOps Resources" title="Azure Arc GitOps Resources"><br/>
 
 `hello-app` service as visible in a cluster:
 
