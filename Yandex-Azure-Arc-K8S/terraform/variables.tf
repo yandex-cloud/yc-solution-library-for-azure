@@ -12,7 +12,7 @@ variable "yc_cloud_id" {
 variable "yc_zone" {
   description = "Yandex.Cloud region"
   type        = string
-  default = "ru-central1-a"
+  default     = "ru-central1-a"
 }
 
 variable "yc_provider_key_file" {
@@ -25,26 +25,15 @@ variable "yc_provider_key_file" {
 
 variable "yc_token" {
   description = "Yandex.Cloud authentication token"
-  default = "xxx"
+  default = null
   
   # See documentation in the link below on how to obtain Oauth token for authentication
   # https://cloud.yandex.com/en-ru/docs/iam/concepts/authorization/oauth-token
 }
 
-variable "yc_k8s_version" {
-  description = "Yandex.Cloud Kubernetes version"
-  default = "1.21"
-}
-
-variable "yc_k8s_channel" {
-  description = "Yandex.Cloud Kubernetes update channel"
-  default = "RAPID"
-}
-
-variable "yc_k8s_cidr" {
-  description = "Yandex.Cloud Kubernetes cluster CIDR"
-  type        = list(string)
-  default     = ["192.168.101.0/24"]
+variable "yc_existing_k8s_cluster_name" {
+  description = "If Kubernetes cluster already exists in YC, please input cluster name"
+  default     = ""
 }
 
 # Azure variables
