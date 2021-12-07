@@ -3,52 +3,58 @@
 ## Overview and target scenario
 If you need to deploy a Site-to-Site VPN connection between Yandex.Cloud and Microsoft Azure, you can use this example and module to set it up.
 
+## Prerequisites
 
+The list of prerequisites required to configure VPN Scenario: 
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [YC CLI](https://cloud.yandex.com/en-ru/docs/cli/operations/install-cli)
+- [Terraform client](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
-
-## Install and authorize azure-cli
-To work with azure provider  azure-cli has to be installed: [AZURE CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-
-### macOS
-```bash
-brew update && brew install azure-cli
-```
-
-### Authorize azure provider for terraform by calling azure-cli
-Use the following command which will redirect you to azure portal to authorize in your subscription
-```bash
-az login
-```
-### In case of success you will see the following message in terminal
-![](./pics/01-azlogin.png)
-
-
-## Install and authorize YC-CLI
+## Yandex СLI Installation
 To automate Yandex.Cloud credentials provisioning (iam-token) install YC-CLI using the following guide [YC CLI](https://cloud.yandex.com/docs/cli/quickstart)
 
-### Linux
-```bash
-curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
-```
-### macos
-```bash
-curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
-```
 
-### Windows
-```powershell
-iex (New-Object System.Net.WebClient).DownloadString('https://storage.yandexcloud.net/yandexcloud-yc/install.ps1')
-Add yc installation dir to your PATH? [Y/n]
-Y
-```
-
-### Export Yandex Cloud Credentials for Provider:
+## Authorize Yandex Cloud Credentials for Provider:
 ```bash
 export YC_TOKEN=$(yc iam create-token)
 export YC_CLOUD_ID=$(yc config get cloud-id)
 export YC_FOLDER_ID=$(yc config get folder-id)
 ```
 
+## Azure authentication
+
+It is recommended to create a Service Principal which will be used for authentication purposes in Azure.
+The process of creating a Service Principal includes the following steps:
+
+1. Login to Azure CLI:
+```
+az login
+```
+2. List the subscriptions associated with the account:
+```
+az account list
+```
+3. Specify the subscription to use (if more than one available):
+```
+az account set --subscription="SUBSCRIPTION_ID"
+```
+4. Create the Service Principal which will be used to manage the resources:
+```
+az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/SUBSCRIPTION_ID"
+```
+5. The command above will output five values which will be used in this guide for deployment:
+```
+{
+  "appId": "00000000-0000-0000-0000-000000000000",
+  "displayName": "azure-cli-2021-00-00-00-00-00",
+  "name": "http://azure-cli-2021-00-00-00-00-00",
+  "password": "0000-0000-0000-0000-000000000000",
+  "tenant": "00000000-0000-0000-0000-000000000000"
+}
+```
+![](./pics/01-azlogin.png)
+
+<br/>
 
 ## What this module will deploy:
 - **00-psk.tf** - this will generate random string to use as pre-shared key for VPN, and encrypt it as cipher-text string with Yandex.KMS.

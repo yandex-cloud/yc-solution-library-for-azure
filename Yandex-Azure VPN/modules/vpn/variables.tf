@@ -59,16 +59,3 @@ variable "azure_gateway_subnet_range" {
   default = ["10.0.255.0/24"]
 }
 
-
-
-#variable "yandex_subnet_range" {
-#  description = "Describe list of subnets that you wish to connect to the VPN from the Yandex.Cloud side"
-#  type = list
-#  default = ["10.128.0.0/24", "10.129.0.0/24", "10.130.0.0/24"]
-#
-#}
-
-#variable "aws_subnet_range" {
-#  description = "Describe list of subnets that you wish to connect to the VPN from the Azure side"
-#  default = ["10.131.0.0/24", "10.132.0.0/24", "10.133.0.0/24"]
-#}
