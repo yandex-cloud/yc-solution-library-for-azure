@@ -1,0 +1,6 @@
+# Various
+*.sh
+key.json
+.DS_Store
+*.cer
+*.tmp
