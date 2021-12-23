@@ -4,11 +4,11 @@ terraform {
   required_providers {
     yandex = {
       source  = "yandex-cloud/yandex"
-      version = "~> 0.66"
+      version = "~> 0.68"
     }
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 2.65"
+    azuread = {
+      source = "hashicorp/azuread"
+      version = "2.13.0"
     }
   }
 }

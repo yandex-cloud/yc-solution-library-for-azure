@@ -1,5 +1,5 @@
 variable "yc_auth" {
-  description = "Yandex.Cloud service account key file"
+  description = "Yandex.Cloud service account key file or token"
   default     = "key.json" # https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token
 }
 
@@ -18,12 +18,12 @@ variable "yc_org_id" {
   default     = "xxxxxx" # yc organization-manager organization list
 }
 
-variable "az_sso_url" {
-  description = "Azure SSO URL"
-  default     = "https://login.microsoftonline.com/<ID SAML-приложения>/saml2"
+variable "az_tenant_id" {
+  description = "Azure tenant ID"
+  default     = "xxxxxx"
 }
 
-variable "az_issuer" {
-  description = "Azure AD Identifier"
-  default     = "https://sts.windows.net/<ID SAML-приложения>/"
+variable "app_name" {
+  description = "Application name"
+  default     = "az-yc-federation"
 }
