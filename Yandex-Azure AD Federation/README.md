@@ -40,8 +40,12 @@ yc_cloud_id     = "xxx"
 yc_org_id       = "xxx"
 az_tenant_id    = "xxx"
 ```
-6. Check your authentication in Terraform `provider.tf` file: it might use `key.json` file or `token`.
-7. Initialize Terraform module and apply it.
+6. Check your Yandex.Cloud authentication in Terraform `provider.tf` file: it might use `key.json` file or `token`.
+7. Initialize Terraform module and apply it:
+```
+terraform init
+terraform apply
+```
 
 <br/>
 
@@ -65,7 +69,7 @@ EOT
 ```
 
 This URL should be used to finish the setup in Azure.
-Also note the Federation ID – you'll need it also to upload the resulting certificate.
+Also note the Federation ID – you'll need it to upload the resulting certificate.
 
 ## Configuring Azure AD application
 
