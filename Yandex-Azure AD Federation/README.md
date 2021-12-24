@@ -73,7 +73,7 @@ Also note the Federation ID – you'll need it to upload the resulting certifica
 
 ## Configuring Azure AD application
 
-Please proceed to your [Enterprise Application](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) in Azure AD, open Single Sign-On blade and choose SAML option, after that fill the required URL's with the URL from the output of the Teraform module.
+Please proceed to your [Enterprise Application](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps) in Azure AD, open Single Sign-On blade and choose SAML option, after that fill the required URL's with the URL from the output of the Terraform module.
 
 <img src="images/az-saml-config.jpg?raw=true" width="400px" alt="YC Login" title="YC Login"><br/>
 
@@ -85,7 +85,7 @@ Download the SAML Signing Certificate in Base64 format.
 
 > The link for download will become active after the required URLs are filled.
 
-Upload the certificate to complete the setup in Yandex.Cloud using the following command (use the Federation ID from the Teraform output above):
+Upload the certificate to complete the setup in Yandex.Cloud using the following command (use the Federation ID from the Terraform output above):
 ```
 yc organization-manager federation saml certificate create --federation-id <FEDERATION_ID> --name "az-yc-federation" --certificate-file "az-yc-federation.cer"
 ```
