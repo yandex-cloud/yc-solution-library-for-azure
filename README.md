@@ -44,7 +44,7 @@ Examples to help build this architecture:
 One company wants to build new applications or modernize existing applications and infrastructure so they can capture and analyze data at remote locations worldwide and deliver onsite, real-time insights with no latency.
 
 
-![image](./pics/img5.png)
+![image](./pics/img5_ver2.png)
 
 Azure Arc makes it possible to run [Azure data services](https://docs.microsoft.com/en-us/azure/azure-arc/data/overview) on any Kubernetes environment as if it runs in Azure (specifically Azure SQL Managed Instance and Azure Database for PostgreSQL Hyperscale, with benefits such as upgrades, updates, security, and monitoring). Use elastic scale and apply updates without any application downtime, even without continuous connection to Azure.
  
