@@ -9,9 +9,9 @@ We are always open to new ideas for adding blocks to the repository. If you thin
 
 Organizations often have tens, hundreds and more applications in their IT environments. These applications run in a diverse infrastructure with data centers, hosting environments and branch offices and may also run in multi-cloud scenarios. Regulations in many countries require keeping certain data within the physical borders of those particular countries. Adding to this complexity, customers also use different development tools, languages and frameworks as well as technologies like DevOps, Kubernetes and AI. Organizations need a solution to architect, design, and manage hybrid applications and infrastructure where components are distributed across public cloud services, private clouds, data-centers and edge locations without sacrificing central visibility and control.
 
-Microsoft Azure is providing a new comprehensive set of tools - [Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/overview), which unlocks new hybrid scenarios for customers by extending Azure services and management to any infrastructure.
-
 To address these scenarios, we decided to implement best practices and automation techniques to help bootstrap development and deployment. Below you’ll find some common architecture patterns that can be developed using the integration block examples in this repository, among other things.
+
+Many architectures that you will see below are built upon a powerful and comprehensive set of tools - [Azure Arc](https://docs.microsoft.com/en-us/azure/azure-arc/overview), which unlocks new hybrid scenarios for customers by extending Azure services and management to any infrastructure. Azure Arc offers simplified management, faster app development, and consistent Azure services. By pushing Azure Arc onto on-premises, multi-cloud or edge systems customers can bring cloud native patterns to a diverse array of virtual and physical devices.
 
 ## Use cases and solution architecture
 
@@ -20,11 +20,11 @@ This is an example of organization with several servers deployed in multiple loc
 
 ![image](./pics/img3.png)
 
-Azure Arc offers simplified management, faster app development, and consistent Azure services. By pushing Azure Arc onto on-premises, multi-cloud or edge systems customers can bring cloud native patterns to a diverse array of virtual and physical devices.
+[Azure Arc-enabled servers](https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview) enables you to manage your Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provider. This management experience is designed to be consistent with how you manage native Azure virtual machines. When a hybrid machine is connected to Azure, it becomes a connected machine and is treated as a resource in Azure, so you can benefit from standard Azure constructs, such as Azure Policy and applying tags. 
 
 Examples to help build this architecture:
 * [Azure Arc-enabled Yandex.Cloud virtual machines]()
-* [Azure Arc-enabled SQL server]()
+* [Azure Arc-enabled SQL server](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20SQL)
 * [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
@@ -40,16 +40,19 @@ Examples to help build this architecture:
 * [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
-### Run data, ML and application services anywhere
+### Run data and application services anywhere
 One company wants to build new applications or modernize existing applications and infrastructure so they can capture and analyze data at remote locations worldwide and deliver onsite, real-time insights with no latency.
 
 
 ![image](./pics/img5.png)
 
+Azure Arc makes it possible to run [Azure data services](https://docs.microsoft.com/en-us/azure/azure-arc/data/overview) on any Kubernetes environment as if it runs in Azure (specifically Azure SQL Managed Instance and Azure Database for PostgreSQL Hyperscale, with benefits such as upgrades, updates, security, and monitoring). Use elastic scale and apply updates without any application downtime, even without continuous connection to Azure.
+ 
+You can also run [App Service, Functions, and Logic Apps](https://docs.microsoft.com/en-us/azure/app-service/overview-arc-integration) on an Azure Arc-enabled Kubernetes cluster that can be on-premises or hosted in a different cloud. This approach lets app developers take advantage of the features of App Service. At the same time, it lets their IT administrators maintain corporate compliance and safeguard their prior investments in other cloud providers or hardware by running App Service on existing Kubernetes clusters.
+
 Examples to help build this architecture:
 * [Azure Arc-enabled data services]()
 * [Azure Arc-enabled app services - preview]()
-* [Azure Arc-enabled machine learning - preview]()
 * [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
@@ -75,7 +78,7 @@ Following are links on all technical scenarios mentioned above in the use cases:
 #### 4. [Yandex - Azure Interconnect](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Interconnect)
 #### 5. [Azure Arc-enabled Yandex.Cloud virtual machines]()
 Azure Arc-enabled servers enables you to manage your Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provider. This management experience is designed to be consistent with how you manage native Azure virtual machines.
-#### 6. [Azure Arc-enabled SQL server]()
+#### 6. [Azure Arc-enabled SQL server](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20SQL)
 You can enable SQL Server on Azure Arc-enabled servers. It extends Azure services to SQL Server instances hosted outside of Azure; in your datacenter, on the edge, or in a multi-cloud environment.
 #### 7. [Azure Arc-enabled Yandex.Cloud Managed Kubernetes Cluster](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20Kubernetes)
 Azure Arc enabled Kubernetes manages cluster configuration and application deployment on any Kubernetes cluster. It adopts a GitOps methodology, so customers define their applications and cluster configurations in source control, in this case, Git. Azure Arc-enabled Kubernetes works with any Cloud Native Computing Foundation (CNCF) certified Kubernetes clusters.
@@ -84,8 +87,6 @@ Azure Arc makes it possible to run Azure data services on-premises, at the edge,
 Currently, the following Azure Arc-enabled data services are available: SQL Managed Instance and PostgreSQL Hyperscale (preview).
 #### 9. [Azure Arc-enabled app services - preview]()
 You can run App Service, Functions, and Logic Apps on an Azure Arc-enabled Kubernetes cluster. The Kubernetes cluster can be on-premises or hosted in a third-party cloud. This approach lets app developers take advantage of the features of App Service. At the same time, it lets their IT administrators maintain corporate compliance by hosting the App Service apps on internal infrastructure.
-#### 10. [Azure Arc-enabled machine learning - preview]()
-Azure Arc-enabled machine learning lets you configure and use Azure Kubernetes Service or Azure Arc-enabled Kubernetes clusters to train, inference, and manage machine learning models in Azure Machine Learning.
 
 
 ## Additional information
